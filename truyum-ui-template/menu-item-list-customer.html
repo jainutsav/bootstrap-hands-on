@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Menu</title>
+        <!-- CSS only -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Font+Name" />
+        <style>
+            html, body {
+                overflow-x: hidden;
+              }
+            nav{
+                background-color: orangered;
+            }
+            #find-food{
+                font-weight: normal;
+                margin-left: 2.5%;
+                padding: 0;
+            }
+            #search {
+                width: 100%;
+                height: 45vh;
+                background-image: url("https://images.unsplash.com/photo-1467453678174-768ec283a940?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1028&q=80");
+                background-repeat: repeat-x;
+                object-fit: cover;
+            }
+            .search-wrapper {
+                margin: 0 auto;
+                float: none;  
+                top: 0;
+                width: 95%;
+                display: flex;
+                align-items: center;  
+            }
+            .search-wrapper input {
+                width: 100%;
+            }
+            .material-icons{
+                vertical-align: middle;
+            }
+            .icon-size{
+                font-size: 1.5rem;
+            }
+            .cart{
+                color: white;
+                font-size: 20px;
+            }
+            .cart-button{
+                background-color: orangered;
+            }
+            .shipping{
+                color: darkblue;
+                font-size: 20px;
+            }
+            footer{
+                bottom:0;
+                margin-top: 2%; 
+                background-color: orangered;
+                height: 3rem;
+            }
+            #footer-text{
+                padding-top: 0.7rem;
+            }
+            .wrapper {
+                position: relative;
+                display: inline-block;
+            }
+            .cost{
+                color: brown;
+            }
+        </style>
+    </head>
+    <body class="d-flex flex-column min-vh-100">
+        <nav class="navbar navbar-expand-lg navbar-dark" >
+            <a class="navbar-brand text-white" href="#">
+              <i class="material-icons icon-size">local_dining</i>
+              truYum
+            </a>
+        <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav navbar-list ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#">Menu Items</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="cart.html">Cart</a>
+                </li>
+            </ul>
+        </div>
+        </nav>
+        
+        <div class="wrapper mb-4 d-flex align-items-center" id="search">
+            <div class="container-fluid">
+                <h1 id="find-food" class="text-white col-12">Find Food</h1>
+                <div class="search-wrapper input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">
+                          <i class="material-icons icon-size text-dark">local_cafe</i>
+                        </span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Search Food" aria-label="search" aria-describedby="basic-addon1">
+                </div>
+            </div>
+        </div>
+        
+        <div class="container-fluid  wrapper flex-grow-1">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-12 mt-2" >
+                    <div class="card-deck">
+                        <div class="card">
+                            <img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1053&q=80" class="card-img-top">
+                            <div class="card-body">
+                                <div  class="card-title mb-1">
+                                    <h5 class="d-inline-block ">Sandwich</h5>
+                                    <span class="float-right cost">₹99</span>
+                                </div>
+                                <div class="mb-1">
+                                    <small>Main Course
+                                        <span class="float-right">
+                                            <i class="material-icons shipping">local_shipping</i>
+                                            <span class="badge bg-info text-light">FREE</span>
+                                        </span>
+                                    </small>
+                                </div>
+                                <a href="menu-item-list-customer-add-to-cart.html" class="btn cart-button text-white float-right"><i class="material-icons cart">shopping_cart</i> Add to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 mt-2" >
+                    <div class="card-deck">
+                        <div class="card">
+                            <img src="https://images.unsplash.com/photo-1512152272829-e3139592d56f?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80" class="card-img-top">
+                            <div class="card-body">
+                                <div  class="card-title mb-1">
+                                    <h5 class="d-inline-block ">Burger</h5>
+                                    <span class="float-right cost">₹129</span>
+                                </div>
+                                <div class="mb-1">
+                                    <small>Main Course</small>
+                                </div>
+                                <a href="menu-item-list-customer-add-to-cart.html" class="btn cart-button text-white float-right"><i class="material-icons cart">shopping_cart</i> Add to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 mt-2" >
+                    <div class="card-deck">
+                        <div class="card">
+                            <img src="https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1055&q=80" class="card-img-top">
+                            <div class="card-body">
+                                <div  class="card-title mb-1">
+                                    <h5 class="d-inline-block ">Pizza</h5>
+                                    <span class="float-right cost">₹149</span>
+                                </div>
+                                <div class="mb-1">
+                                    <small>Main Course</small>
+                                </div>
+                                <a href="menu-item-list-customer-add-to-cart.html" class="btn cart-button text-white float-right"><i class="material-icons cart">shopping_cart</i> Add to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 mt-2" >
+                    <div class="card-deck">
+                    <div class="card">
+                            <img src="https://images.unsplash.com/photo-1526230427044-d092040d48dc?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80" class="card-img-top">
+                            <div class="card-body">
+                                <div  class="card-title mb-1">
+                                    <h5 class="d-inline-block ">French Fries</h5>
+                                    <span class="float-right cost">₹157</span>
+                                </div>
+                                <div class="mb-1">
+                                    <small>Starter
+                                        <span class="float-right">
+                                            <i class="material-icons shipping">local_shipping</i>
+                                            <span class="badge bg-info text-light">FREE</span>
+                                        </span>
+                                    </small>
+                                </div>
+                                <a href="menu-item-list-customer-add-to-cart.html" class="btn cart-button text-white float-right"><i class="material-icons cart">shopping_cart</i> Add to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12 mt-2" >
+                    <div class="card-deck">
+                        <div class="card">
+                            <img src="https://c0.anyrgb.com/images/699/216/baked-pastries-biscuit-cookie-food-brownie-chocolate-dessert-fudge-fruit-pineapple.jpg" class="card-img-top">
+                            <div class="card-body">
+                                <div  class="card-title mb-1">
+                                    <h5>Chocolate</h5>
+                                    <h5 class="d-inline-block ">Brownie</h5>
+                                    <span class="float-right cost">₹32</span>
+                                </div>
+                                <div class="mb-1">
+                                    <small>Dessert
+                                        <span class="float-right">
+                                            <i class="material-icons shipping">local_shipping</i>
+                                            <span class="badge bg-info text-light">FREE</span>
+                                        </span>
+                                    </small>
+                                </div>
+                                <a href="menu-item-list-customer-add-to-cart.html" class="btn cart-button text-white float-right"><i class="material-icons cart">shopping_cart</i> Add to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <footer class="text-white text-lg-start container-fluid">
+            <span class="d-inline-block" id="footer-text">Copyright 2019</span>
+        </footer>
+        
+        
+        
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous" ></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous" ></script>
+    </body>
+</html>
