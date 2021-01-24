@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Edit Menu Item</title>
+        <!-- CSS only -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+        <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+        <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css"/>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Font+Name" />
+        <style>
+            html, body {
+                overflow-x: hidden;
+                min-height: 100vh;
+                position: relative;
+                margin: 0;
+                box-sizing: border-box;
+              }
+            nav{
+                background-color: orangered;
+            }
+            .material-icons{
+                vertical-align: middle;
+            }
+            .icon-size{
+                font-size: 1.5rem;
+            }
+            footer{
+                bottom:0;
+                margin-top: 2%;
+                background-color: orangered;
+                height: 3rem;
+            }
+            #footer-text{
+                padding-top: 0.7rem;
+            }
+            .gj-datepicker-bootstrap [role=right-icon] button{
+                height: 38px;
+            }
+            h2{
+                padding-left: 15px;
+                padding-top: 15px;
+            }
+            .save-button{
+                color: white;
+                background-color: orangered;
+            }
+        </style>
+    </head>
+    <body class="d-flex flex-column min-vh-100">
+        <nav class="navbar navbar-expand-lg navbar-dark" >
+            <a class="navbar-brand text-white" href="#">
+              <i class="material-icons icon-size">movie</i>
+              Movie Cruiser
+            </a>
+        <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav navbar-list ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="movies-list-admin.html">Movies</a>
+                </li>
+            </ul>
+        </div>
+        </nav>
+        
+        <h2>Edit Movie</h2>
+        <form name="edit-menu-form" onsubmit="return validateForm()" action="edit-movie-success.html">
+            <div class="container-fluid">
+                <div class="row form-group">
+                    <div class="col">
+                        <label for="movieName">Movie Name</label>
+                        <input type="text" id="movieName" class="form-control">
+                        <label class="text-danger" id="name-error"></label>
+                    </div>  
+                </div>
+                <div class="row form-group mt-2">
+                    <div class="col-xl-3">
+                        <label for="rating">Rating</label>
+                        <input type="text" id="rating" class="form-control">
+                        <label class="text-danger" id="rating-error"></label>    
+                    </div>  
+                    <div class="col-xl-3">
+                        <label for="datepicker">Date of Launch</label>
+                        <input type="text" class="form-control" id="datepicker">
+                        <label class="text-danger" id="date-error"></label>
+                    </div>
+                    <div class="col-xl-3">
+                        <label for="genre">Genre</label>
+                        <select class="form-control" id="genre">
+                            <option></option>
+                            <option>Science Fiction</option>
+                            <option>Superhero</option>
+                            <option>Romance</option>
+                            <option>Comedy</option>
+                            <option>Adventure</option>
+                            <option>Thriller</option>
+                        </select>
+                        <label class="text-danger" id="genre-error"></label>
+                    </div>
+                    <div class="col-xl-3">
+                        <div><label for="active">Active</label></div>
+                        <div class="form-check d-inline-block">
+                            <input type="radio" name="active" class="form-check-input" value="yes">
+                            <label for="yes" class="form-check-label">Yes</label>
+                        </div>
+                        <div class="form-check d-inline-block" style="margin-left: 4px;">
+                            <input type="radio" name="active" class="form-check-input " value="no">
+                            <label for="no" class="form-check-label">No</label>
+                        </div>
+                        <label class="d-block text-danger" id="active-error"></label>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col">
+                        <label for="teaser">Teaser URL</label>
+                        <input type="text" id="teaser" class="form-control">
+                        <label class="text-danger" id="teaser-error"></label>
+                    </div>  
+                </div>
+                <input type="submit" value="Save"s class="mt-2 btn save-button">
+            </div>
+        </form>
+        <footer class="text-white text-lg-start container-fluid">
+            <span class="d-inline-block" id="footer-text">Copyright 2019</span>
+        </footer>
+        
+        <script>
+            $('#datepicker').datepicker({
+            uiLibrary: 'bootstrap4',
+            format: 'dd/mm/yyyy'
+            });
+        </script>
+        <script>
+        function validateForm() {
+            var movieName = document.getElementById("movieName");
+            var rating = document.getElementById("rating");
+            var dateOfLaunch = document.getElementById("datepicker");
+            var genre = document.getElementById("genre");
+            var active = document.getElementsByName("active");
+            var teaser = document.getElementById("teaser");
+            var flag = true;
+            console.log(dateOfLaunch.value);
+            document.getElementById("name-error").innerHTML = "";
+            document.getElementById("rating-error").innerHTML = "";
+            document.getElementById("date-error").innerHTML = "";
+            document.getElementById("genre-error").innerHTML = "";
+            document.getElementById("active-error").innerHTML = "";
+            document.getElementById("teaser-error").innerHTML = "";
+
+            if (movieName == null || movieName.value == "") {
+              document.getElementById("name-error").innerHTML =
+                "Movie name is required.";
+              flag = false;
+            }
+            if (movieName.value.length > 200) {
+              document.getElementById("name-error").innerHTML =
+                "Movie name cannot exceed 200 characters.";
+              flag = false;
+            }
+            if (rating.value != "" && !/^((\d?)|(10))(\.\d{1})?$/.test(rating.value)) {
+              document.getElementById("rating-error").innerHTML =
+                "Rating can only contain a number between 0-10.";
+              flag = false;
+            }
+
+            if (rating.value != "" && !/^\d+(\.\d{1,2})?$/.test(rating.value)) {
+              document.getElementById("rating-error").innerHTML =
+                "Rating can only contain numbers.";
+              flag = false;
+            }
+            if (
+              dateOfLaunch == null ||
+              !/(^(((0[1-9]|1[0-9]|2[0-8])[\/](0[1-9]|1[012]))|((29|30|31)[\/](0[13578]|1[02]))|((29|30)[\/](0[4,6,9]|11)))[\/](19|[2-9][0-9])\d\d$)|(^29[\/]02[\/](19|[2-9][0-9])(00|04|08|12|16|20|24|28|32|36|40|44|48|52|56|60|64|68|72|76|80|84|88|92|96)$)/.test(
+                dateOfLaunch.value
+              )
+            ) {
+              document.getElementById("date-error").innerHTML =
+                "Incorrect date format.";
+              flag = false;
+            }
+            if (genre == null || genre.value == "") {
+              document.getElementById("genre-error").innerHTML =
+                "Select atleast one genre.";
+              flag = false;
+            }
+            if (!active[0].checked && !active[1].checked) {
+              document.getElementById("active-error").innerHTML =
+                "Select active/inctive status.";
+              flag = false;
+            }
+            if (teaser == null || teaser.value == "") {
+              document.getElementById("teaser-error").innerHTML = "Teaser URL is required.";
+              flag = false;
+            }
+            return flag;
+      }
+    </script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous" ></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous" ></script>
+    </body>
+</html>
